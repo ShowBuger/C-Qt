@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Widget</string>
+   <string>记事本</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="res.qrc">
+    <normaloff>:/icon/note.png</normaloff>:/icon/note.png</iconset>
   </property>
   <widget class="QWidget" name="">
    <property name="geometry">
@@ -35,7 +39,7 @@
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(70, 70, 70);</string>
+       <string notr="true">background-color: rgb(57, 57, 57);</string>
       </property>
       <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
@@ -50,24 +54,59 @@
         <property name="spacing">
          <number>0</number>
         </property>
-        <item>
+        <item alignment="Qt::AlignLeft">
          <widget class="QPushButton" name="btnopen">
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {border-image: url(:/icon/open0.png);}
+QPushButton:hover{border-image: url(:/icon/open1.png);}
+QPushButton:pressed{border-image: url(:/icon/open2.png);}
+
+</string>
+          </property>
           <property name="text">
-           <string>打开</string>
+           <string/>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="btnsave">
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {border-image: url(:/icon/save0.png);}
+QPushButton:hover{border-image: url(:/icon/save1.png);}
+QPushButton:pressed{border-image: url(:/icon/save2.png);}</string>
+          </property>
           <property name="text">
-           <string>保存</string>
+           <string/>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="btnclose">
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {border-image: url(:/icon/close0.png);}
+QPushButton:hover{border-image: url(:/icon/close1.png);}
+QPushButton:pressed{border-image: url(:/icon/close2.png);}</string>
+          </property>
           <property name="text">
-           <string>关闭</string>
+           <string/>
           </property>
          </widget>
         </item>
@@ -89,7 +128,11 @@
      </widget>
     </item>
     <item>
-     <widget class="QTextEdit" name="textEdit"/>
+     <widget class="QTextEdit" name="textEdit">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QWidget" name="widgetBottom" native="true">
@@ -100,20 +143,36 @@
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(70, 70, 70);</string>
+       <string notr="true">background-color: rgb(57, 57, 57);</string>
       </property>
       <widget class="QWidget" name="">
        <property name="geometry">
         <rect>
-         <x>670</x>
+         <x>20</x>
          <y>10</y>
-         <width>131</width>
-         <height>21</height>
+         <width>761</width>
+         <height>22</height>
         </rect>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
          <widget class="QLabel" name="labelPosition">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
           <property name="text">
            <string>第1行第1列</string>
           </property>
@@ -121,10 +180,29 @@
         </item>
         <item>
          <widget class="QLabel" name="labelCode">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
           <property name="text">
            <string>UTF-8</string>
           </property>
          </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </widget>
@@ -133,6 +211,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>
